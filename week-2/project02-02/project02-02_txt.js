@@ -3,9 +3,8 @@
       Project 02-02
 
       Application to test for completed form
-      Author: 
-      Date:   
+      Author: Daniel Topete
+      Date:8/17/2026
 
       Filename: project02-02.js
  */
- 
