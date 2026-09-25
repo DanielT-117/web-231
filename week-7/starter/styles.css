@@ -138,7 +138,11 @@ button:hover {
   padding: 14px 12px;
   text-align: center;
   border-radius: 12px;
-  background: linear-gradient(180deg, #eef4ff 0%, #e6f0ff 100%); /* Blue gradient background */
+  background: linear-gradient(
+    180deg,
+    #eef4ff 0%,
+    #e6f0ff 100%
+  ); /* Blue gradient background */
   border: 1px solid #c8d8f2;
   box-shadow: 0 4px 12px rgba(31, 60, 136, 0.08);
 }

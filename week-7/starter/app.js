@@ -81,20 +81,36 @@ quizSetup.addEventListener("submit", function (event) {
 /**
  * Reset quiz to initial state:
  * - Clear any active countdown
-* - Reset time to full duration
+ * - Reset time to full duration
  * - Clear all question inputs
  * - Remove wrong answer styling
  */
 function resetQuiz() {
   window.clearInterval(timerId);
   timeLeft = quizTime;
-  quizClock.value = timeLeft;
+  updateClock();
 
-  // Clear all question responses and error styling
+  clearAnswers();
+  clearAnswerStyles();
+}
+
+// Clear input fields
+function clearAnswers() {
   questionList.forEach((input) => {
     input.value = "";
+  });
+}
+
+// Remove 'wronganswer' from inputs
+function clearAnswerStyles() {
+  questionList.forEach((input) => {
     input.classList.remove("wronganswer");
   });
+}
+
+// Update clock display
+function updateClock() {
+  quizClock.value = timeLeft;
 }
 
 /**
@@ -109,7 +125,7 @@ function countdown() {
   } else {
     // Decrement time and update display
     timeLeft--;
-    quizClock.value = timeLeft;
+    updateClock();
   }
 }
 
