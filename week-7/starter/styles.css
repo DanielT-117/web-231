@@ -123,18 +123,14 @@ button:hover {
 .results-section p {
   margin: 8px 0;
 }
-/* Quiz header with title and timer */
+/* Quiz header with title and instructions */
 .quiz-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
   margin-bottom: 18px;
 }
 
-/* Timer display box */
+/* Timer display box - sits at the top of the sidebar */
 .timer-box {
-  min-width: 140px;
+  margin-bottom: 16px;
   padding: 14px 12px;
   text-align: center;
   border-radius: 12px;
@@ -170,30 +166,42 @@ button:hover {
   background: transparent;
 }
 
-/* Question card container */
+/* Question card container - stacks number, text, and input */
 .question-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   padding: 14px;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   background: #fff;
 }
 
+/* Question number label line */
+.question-number {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1f3c88;
+}
+
 /* Question text */
 .question-text {
-  flex: 1 1 auto; /* Expand to fill available space */
   font-weight: 600;
   color: #0f172a;
 }
 
+/* Remove default label gap - spacing handled by .question-content gap */
+.question-text label {
+  margin-bottom: 0;
+}
+
 /* Question input area */
 .question-input {
-  flex: 0 0 140px; /* Fixed width for answer inputs */
-  display: flex;
-  align-items: center;
+  width: 100%;
 }
 /* Question row background */
 .question-row {
@@ -220,18 +228,5 @@ button:hover {
   /* Stack sidebar and quiz on top of each other */
   .app-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Stack quiz header items vertically on mobile */
-  .quiz-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* Adjust timer positioning on mobile */
-  .timer-box {
-    margin-top: 8px;
-    align-self: flex-end;
-    min-width: 120px;
   }
 }
